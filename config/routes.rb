@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "/animals" => "animals#index"
+  get "/animals/:id" => "animals#show"
+  post "/animals" => "animals#create"
+  patch "/animals/:id" => "animals#update"
+  delete "/animals/:id" => "animals#destroy"
 end
