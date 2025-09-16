@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   post "/animals" => "animals#create"
   patch "/animals/:id" => "animals#update"
   delete "/animals/:id" => "animals#destroy"
+
+  get "/pet_stores" => "pet_stores#index"
+  get "/pet_stores/:id" => "pet_stores#show"
+  post "/pet_stores" => "pet_stores#create"
 end

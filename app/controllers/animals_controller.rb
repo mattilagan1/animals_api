@@ -12,13 +12,17 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    animal = Animal.create(
+    animal = Animal.new(
       species: params[:species],
       age: params[:age],
       name: params[:name]
     )
 
+    if animal.save
     render json: animal
+    else
+      render json: animal.errors, status: :unprocessable_entity
+    end
   end
 
   def update
